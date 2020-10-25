@@ -1,11 +1,7 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
-import Icon from '@material-ui/core/Icon';
 import UpdateIcon from '@material-ui/icons/Update';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -33,7 +29,7 @@ class UsersDetails extends React.Component {
     ],
     active: false
   }
-
+  // set the user details in state
   componentDidUpdate = (prevProps, props) => {
     if (prevProps.userSelected != this.props.userSelected) {
       this.setState({
@@ -52,7 +48,7 @@ class UsersDetails extends React.Component {
       })
     }
   }
-
+  // handle change the input when update user
   changeTextHandler = (name, e) => {
     this.setState({
       [name]: e.target.value
@@ -66,9 +62,8 @@ class UsersDetails extends React.Component {
       activeUrlField: false
     })
   }
-
+  // to update user on the main list
   updatedUser = () => {
-
     const { active, userDetails, loginName, displayName, address, salary, country, dateOfBirth, profilePic } = this.state
     let userObj = {
       id: userDetails.id, loginName: loginName, displayName: displayName,
@@ -79,7 +74,7 @@ class UsersDetails extends React.Component {
       userDetails: ''
     })
   }
-
+  // to resr a user details
   addUser = () => {
     this.setState({
       loginName: '',
@@ -96,8 +91,8 @@ class UsersDetails extends React.Component {
     })
 
   }
+  // to add a new user
   addNewUser = () => {
-
     const { active, userDetails, loginName, displayName, address, salary, country, dateOfBirth, profilePic } = this.state
     let userObj = {
       id: userDetails.id, loginName: loginName, displayName: displayName,
@@ -108,6 +103,7 @@ class UsersDetails extends React.Component {
       userDetails: ''
     })
   }
+  // handle the active and Inactive user
   handleRadioChange = (event) => {
     if (event.target.value === 'Active') {
       this.setState({
@@ -120,6 +116,7 @@ class UsersDetails extends React.Component {
       })
     }
   }
+
   render() {
     return (
       <div style={styles.content}>

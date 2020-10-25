@@ -4,12 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Icon from '@material-ui/core/Icon';
-import UpdateIcon from '@material-ui/icons/Update';
-import IconButton from '@material-ui/core/IconButton';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import TextField from '@material-ui/core/TextField';
 
 class UsersList extends React.Component {
@@ -75,6 +70,7 @@ class UsersList extends React.Component {
       this.addUser(this.props.addUser)
     }
   }
+  // add user to main list
   addUser = (addUser) => {
     addUser.id = this.state.usersArr.length + 1
     var adduserArr = this.state.usersArr
@@ -82,11 +78,9 @@ class UsersList extends React.Component {
     this.setState({
       usersArr: adduserArr
     })
-    // adduser.push()
   }
-
+  // update user on the list
   updateUser = (userObj) => {
-    console.log(userObj, "UUUUUUUUUUUUUUUUUUUUUUUUUUUU")
     var updateUser = []
     this.state.usersArr.forEach(el => {
       if (el.id == userObj.id) {
@@ -99,7 +93,7 @@ class UsersList extends React.Component {
       usersArr: updateUser
     })
   }
-
+  // delete user from list
   deleteUserFromList = (userId) => {
     var deleteUserFromArr = []
     this.state.usersArr.forEach(el => {
@@ -111,7 +105,7 @@ class UsersList extends React.Component {
       usersArr: deleteUserFromArr
     })
   }
-
+  //handle the search
   changeTextHandler = (name, event) => {
     this.setState({
       [name]: event.target.value
@@ -123,7 +117,6 @@ class UsersList extends React.Component {
       (fil) => {
         return fil.displayName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       })
-    const { usersArr } = this.state
     return (
       <div style={styles.content}>
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{ padding: "0px", backgroundColor: "#3995d2", minHeight: "40px" }}>
@@ -143,7 +136,6 @@ class UsersList extends React.Component {
             }}>
 
               <Card
-                // className={classes.root}
                 style={{ maxWidth: "245px" }}
               >
                 <CardActionArea>
@@ -158,9 +150,7 @@ class UsersList extends React.Component {
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                       <div className="col-xs-12" style={{ padding: "0px", marginBottom: "5px" }}>
-
                         {user.country}
-
                       </div>
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                     across all continents except Antarctica

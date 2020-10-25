@@ -8,23 +8,25 @@ class Container extends React.Component {
     userObj: '',
     addUserObj: ''
   }
+  // select a user handler
   selectCard = (card) => {
     this.setState({
       userSelected: card
     })
   }
-
+  // delete user handler
   deleteUser = (userId) => {
     this.setState({
       userId: userId
     })
   }
+  // update user handler
   updatedUser = (userObj) => {
     this.setState({
       userObj: userObj
     })
   }
-
+  //add user handler 
   addUser = (userObj) => {
     this.setState({
       addUserObj: userObj

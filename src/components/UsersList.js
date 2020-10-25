@@ -124,7 +124,7 @@ class UsersList extends React.Component {
         </div>
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={styles.search}>
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <TextField onChange={(event) => {
+            <TextField autoComplete="off" onChange={(event) => {
               this.changeTextHandler('search', event)
             }} value={this.state.search} style={styles.inputField} id="outlined-basic" label="Search" variant="outlined" />
           </div>

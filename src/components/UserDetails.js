@@ -130,24 +130,24 @@ class UsersDetails extends React.Component {
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{ padding: "0px", marginTop: '40px' }}>
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6" style={{ marginTop: '10px' }}>
-                <TextField onChange={(event) => {
+                <TextField autoComplete="off" onChange={(event) => {
                   this.changeTextHandler('loginName', event)
                 }} value={this.state.loginName} style={styles.inputField} id="outlined-basic" label="Login Name" variant="outlined" disabled={this.state.disabled} />
               </div>
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6" style={{ marginTop: '10px' }}>
-                <TextField onChange={(event) => {
+                <TextField autoComplete="off" onChange={(event) => {
                   this.changeTextHandler('displayName', event)
                 }} value={this.state.displayName} style={styles.inputField} id="outlined-basic" label="Display Name" variant="outlined" disabled={this.state.disabled} />
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{ padding: "0px", marginTop: '10px' }}>
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6" style={{ marginTop: '10px' }}>
-                <TextField onChange={(event) => {
+                <TextField autoComplete="off" onChange={(event) => {
                   this.changeTextHandler('address', event)
                 }} value={this.state.address} style={styles.inputField} id="outlined-basic" label="Address" variant="outlined" disabled={this.state.disabled} />
               </div>
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6" style={{ marginTop: '10px' }}>
-                <TextField onChange={(event) => {
+                <TextField autoComplete="off" onChange={(event) => {
                   this.changeTextHandler('salary', event)
                 }} value={this.state.salary} style={styles.inputField} id="outlined-basic" type="number" label="Salary" variant="outlined" disabled={this.state.disabled} />
               </div>

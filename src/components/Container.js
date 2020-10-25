@@ -43,7 +43,6 @@ class Container extends React.Component {
           <UserDetails addUser={(userObj) => { this.addUser(userObj) }} userSelected={this.state.userSelected} deleteUser={(userId) => { this.deleteUser(userId) }} updatedUser={(userObj) => {
             this.updatedUser(userObj)
           }} />
-          {/* <CardInfo cardSelected={this.state.cardSelected} applyed={this.applyed} /> */}
         </div>
       </div>
     );

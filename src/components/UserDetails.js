@@ -246,7 +246,6 @@ class UsersDetails extends React.Component {
               }}
                 variant="contained"
                 color="primary"
-                // className={classes.button}
                 startIcon={<AddCircleIcon />}
               >
                 Add User
@@ -270,18 +269,10 @@ class UsersDetails extends React.Component {
               }}
                 variant="contained"
                 color="default"
-                // className={classes.button}
                 startIcon={<DeleteIcon />}
               >
                 Delete
               </Button>
-
-              {/* <button onClick={() => {
-                this.addUser()
-              }}>
-                ADD
-              </button> */}
-
             </div>
 
           </div>

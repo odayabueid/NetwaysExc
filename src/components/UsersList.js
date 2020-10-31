@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import { Redirect } from 'react-router';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 class UsersList extends React.Component {
 
@@ -57,7 +59,8 @@ class UsersList extends React.Component {
         isActive: true, salary: 650, profilePic: 'https://png.pngitem.com/pimgs/s/54-547946_business-woman-animation-png-transparent-png.png'
       }
     ],
-    search: ''
+    search: '',
+    homePage: false
   }
   componentDidUpdate = (prevProps, props) => {
     if (prevProps.deleteUserFromListId != this.props.deleteUserFromListId) {
@@ -112,6 +115,19 @@ class UsersList extends React.Component {
     })
   }
 
+  goToHomePage = () => {
+    this.setState({
+      homePage: true
+    })
+  }
+  renderRedirect = () => {
+    if (this.state.homePage) {
+      return <Redirect to={{
+        pathname: "/"
+      }} />
+    }
+  }
+
   render() {
     let filtered = this.state.usersArr.filter(
       (fil) => {
@@ -120,7 +136,8 @@ class UsersList extends React.Component {
     return (
       <div style={styles.content}>
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{ padding: "0px", backgroundColor: "#3995d2", minHeight: "40px" }}>
-
+          <ArrowBackIcon style={{ fontSize: "35px", color: "#fff", cursor: "pointer", margin: '2px' }} onClick={this.goToHomePage} />
+          {this.renderRedirect()}
         </div>
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={styles.search}>
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">

@@ -38,6 +38,7 @@ class Container extends React.Component {
       <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{ backgroundColor: "#f8f8f8", minHeight: "720px" }}>
         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7">
           <UsersList selectCard={(user) => this.selectCard(user)} deleteUserFromListId={this.state.userId} updateUser={this.state.userObj} addUser={this.state.addUserObj} />
+          {/* <Sales /> */}
         </div>
         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
           <UserDetails addUser={(userObj) => { this.addUser(userObj) }} userSelected={this.state.userSelected} deleteUser={(userId) => { this.deleteUser(userId) }} updatedUser={(userObj) => {
